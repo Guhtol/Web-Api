@@ -1,0 +1,28 @@
+﻿@model Testando.Models.CepViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Testando Aplicação</h2>
+
+<label>Digite um Cep</label>
+<form action="buscaCep" method="post">
+    <div class="form-group">
+        <input type="text" name="Cep" id="Cep" class="form-control" />
+    </div>
+    @Html.ValidationMessageFor(x=>x.Cep)
+    <input type="submit" class="btn btn-success" />
+</form>
+
+<p>
+ Cep Digitado:  @Html.DisplayFor(x => x.Cep)
+</p>
+
+<p>Latitude: @Html.DisplayFor(x => x.Latitude)</p> 
+
+<p>
+ Longitude:   @Html.DisplayFor(x => x.Longitude)
+</p>
+
+
+

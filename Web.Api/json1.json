@@ -1,0 +1,73 @@
+﻿[
+  {
+    "address_components": [
+      {
+        "long_name": "1600",
+        "short_name": "1600",
+        "types": [
+          "street_number"
+        ]
+      },
+      {
+        "long_name": "Amphitheatre Parkway",
+        "short_name": "Amphitheatre Pkwy",
+        "types": [
+          "route"
+        ]
+      },
+      {
+        "long_name": "Mountain View",
+        "short_name": "Mountain View",
+        "types": [
+          "locality",
+          "political"
+        ]
+      },
+      {
+        "long_name": "California",
+        "short_name": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ]
+      },
+      {
+        "long_name": "United States",
+        "short_name": "US",
+        "types": [
+          "country",
+          "political"
+        ]
+      },
+      {
+        "long_name": "94043",
+        "short_name": "94043",
+        "types": [
+          "postal_code"
+        ]
+      }
+    ],
+    "formatted_address": "1600 Amphitheatre Parkway, Mountain View, CA 94043, USA",
+    "geometry": {
+      "location": {
+        "lat": 37.4225456,
+        "lng": -122.0842498
+      },
+      "location_type": "ROOFTOP",
+      "viewport": {
+        "northeast": {
+          "lat": 37.4238945802915,
+          "lng": -122.0829008197085
+        },
+        "southwest": {
+          "lat": 37.4211966197085,
+          "lng": -122.08559878029151
+        }
+      }
+    },
+    "place_id": "ChIJ2eUgeAK6j4ARbn5u_wAGqWA",
+    "types": [
+      "street_address"
+    ]
+  }
+]

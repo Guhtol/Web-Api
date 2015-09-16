@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Web
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Api", "Web.Api\Web.Api.csproj", "{4C792BCB-40C5-4DCA-A6EA-A918AA3C6318}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{271B9051-49F5-46CE-96DA-649382800677}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testando", "Testando\Testando.csproj", "{0F44BA61-8D54-483C-85CD-1EE1F5902F21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TesteWebApi", "TesteWebApi", "{B7EE7E60-15AF-4A8C-8AAC-71073D3B7268}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C792BCB-40C5-4DCA-A6EA-A918AA3C6318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C792BCB-40C5-4DCA-A6EA-A918AA3C6318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C792BCB-40C5-4DCA-A6EA-A918AA3C6318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C792BCB-40C5-4DCA-A6EA-A918AA3C6318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F44BA61-8D54-483C-85CD-1EE1F5902F21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F44BA61-8D54-483C-85CD-1EE1F5902F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F44BA61-8D54-483C-85CD-1EE1F5902F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F44BA61-8D54-483C-85CD-1EE1F5902F21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C792BCB-40C5-4DCA-A6EA-A918AA3C6318} = {271B9051-49F5-46CE-96DA-649382800677}
+		{0F44BA61-8D54-483C-85CD-1EE1F5902F21} = {B7EE7E60-15AF-4A8C-8AAC-71073D3B7268}
+	EndGlobalSection
+EndGlobal
