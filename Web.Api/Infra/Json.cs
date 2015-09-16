@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Web.Api.Json;
+using Web.Api.Infra;
 using Web.Api.Model;
 using System.Web;
 using Newtonsoft.Json;
@@ -13,30 +13,30 @@ using System.Web.Script.Serialization;
 using Web.Api.Model;
 
 
-namespace Web.Api.Json
+namespace Web.Api.Infra
 {
     public class Json:IJson
     {
-        private ViaCepModel vcModel = new ViaCepModel();
+        //private ViaCepModel vcModel = new ViaCepModel();
         /// <summary>
         /// Utilize quando quiser buscar dados em Json da Via Cep
         /// </summary>
         /// <param name="json">entregue seu json para uma string para utilizar</param>
         /// <returns></returns>
-        public List<ViaCepModel> DescerializarJsonViaCep(string json)
+        public List<ViaCep> DescerializarJsonViaCep(string json)
         {
-            ViaCepModels listaCep = new ViaCepModels();
-            ViaCepModel vcp = new ViaCepModel()
+            List<ViaCep> listaCep = new List<ViaCep>();
+            ViaCep vcp = new ViaCep()
             {
-                cep=JsonConvert.DeserializeObject<ViaCepModel>(json).cep,
-                logradouro=JsonConvert.DeserializeObject<ViaCepModel>(json).logradouro,
-                bairro=JsonConvert.DeserializeObject<ViaCepModel>(json).bairro,
-                ibge = JsonConvert.DeserializeObject<ViaCepModel>(json).ibge,
-                localidade = JsonConvert.DeserializeObject<ViaCepModel>(json).localidade,
-                uf = JsonConvert.DeserializeObject<ViaCepModel>(json).uf
+                cep=JsonConvert.DeserializeObject<ViaCep>(json).cep,
+                logradouro=JsonConvert.DeserializeObject<ViaCep>(json).logradouro,
+                bairro=JsonConvert.DeserializeObject<ViaCep>(json).bairro,
+                ibge = JsonConvert.DeserializeObject<ViaCep>(json).ibge,
+                localidade = JsonConvert.DeserializeObject<ViaCep>(json).localidade,
+                uf = JsonConvert.DeserializeObject<ViaCep>(json).uf
             };
-            listaCep.IncluirCep(vcp);
-            return listaCep.ListarViaCepModel();
+            listaCep.Add(vcp);
+            return listaCep.ToList();
         }
         public List<Distancia> DescerializarJsonGeologic(string json)
         {

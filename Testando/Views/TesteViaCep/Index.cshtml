@@ -3,10 +3,12 @@
     ViewBag.Title = "Index";
 }
 
+
 <h2>Testando Aplicação</h2>
 
 <label>Digite um Cep</label>
 <form action="buscaCep" method="post">
+    @Html.AntiForgeryToken()
     <div class="form-group">
         <input type="text" name="Cep" id="Cep" class="form-control" />
     </div>

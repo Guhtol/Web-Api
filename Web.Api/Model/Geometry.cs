@@ -10,13 +10,4 @@ namespace Web.Api.Model
     {
         public Location geometry;
     }
-    public class Location
-    {
-        public Distancia location;
-    }
-    public class Distancia
-    {
-        public double lat { get; set; }
-        public double lng { get; set; }
-    }
 }

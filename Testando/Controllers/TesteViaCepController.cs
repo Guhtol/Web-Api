@@ -5,41 +5,40 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
 using Testando.Models;
-using Web.Api.Informação;
 using Web.Api.Infra;
-using Web.Api.Json;
 using Web.Api.Model;
 
 namespace Testando.Controllers
 {
     public class TesteViaCepController : Controller
     {
-        private IRequisiçãoHttp requisiçãoHttp = new RequisicaoHttp();
-        private IJson jsonDeserializacao = new Json();
-        private IUser user = new User();
+        private IRequisiçãoHttp irequisiçãoHttp = new RequisicaoHttp();
+        private IJson ijsonDeserializacao = new Json();
+        private IviaCep iviaCep = new ViaCep();
         private HttpClient httpClient;
         string json = "";
         public ActionResult Index()
         {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult BuscaCep(CepViewModel model)
         {
 
             if (ModelState.IsValid)
             {
-                httpClient = requisiçãoHttp.PreparaHttpClient("http://viacep.com.br/ws/", "application/json");
-                json = requisiçãoHttp.RetonarMenssagemHttp(model.Cep + "/json/", httpClient);
-                var viaCep = jsonDeserializacao.DescerializarJsonViaCep(json);
-                httpClient = requisiçãoHttp.PreparaHttpClient("http://maps.googleapis.com/maps/api/geocode/json", "application/json");
+                httpClient = irequisiçãoHttp.PreparaHttpClient("http://viacep.com.br/ws/", "application/json");
+                json = irequisiçãoHttp.RetonarMenssagemHttp(model.Cep + "/json/", httpClient);
+                var viaCep = ijsonDeserializacao.DescerializarJsonViaCep(json);
+                httpClient = irequisiçãoHttp.PreparaHttpClient("http://maps.googleapis.com/maps/api/geocode/json", "application/json");
                 viaCep.ForEach(item =>
                 {
-                    json = requisiçãoHttp.RetonarMenssagemHttp("?address=" + item.localidade + "+" + item.logradouro + "&sensor=false", httpClient);
+                    json = irequisiçãoHttp.RetonarMenssagemHttp("?address=" + item.localidade + "+" + item.logradouro + "&sensor=false", httpClient);
                 });
-                //json = requisiçãoHttp.RetonarMenssagemHttp("?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&sensor=false", httpClient);
 
-                var google = jsonDeserializacao.DescerializarJsonGeologic(json);
-                var dadosCliente = user.ListarInformacoes(viaCep, google);
+                var google = ijsonDeserializacao.DescerializarJsonGeologic(json);
+                var dadosCliente = iviaCep.RetornaLatitudeLongitude(viaCep, google);
                 dadosCliente.ForEach(item =>
                 {
                     model.Cep = item.cep;

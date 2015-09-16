@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Web.Api.Model;
 
-namespace Web.Api.Informação
+namespace Web.Api.Infra
 {
-    public interface IUser
+    public interface IviaCep
     {
-        List<ViaCepModel> ListarInformacoes(List<ViaCepModel> Cep, List<Distancia> Distancia);
+        List<ViaCep> RetornaLatitudeLongitude(List<ViaCep> Cep, List<Distancia> Distancia);
     }
 }

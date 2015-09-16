@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Web.Api.Model;
 
-namespace Web.Api.Json
+namespace Web.Api.Infra
 {
     public interface IJson
     {
-        List<ViaCepModel> DescerializarJsonViaCep(string json);
+        List<ViaCep> DescerializarJsonViaCep(string json);
         List<Distancia> DescerializarJsonGeologic(string json);
     }
 }

@@ -9,8 +9,7 @@ namespace Web.Api.Infra
 {
     public interface IRequisiçãoHttp
     {
-        HttpClient PreparaHttpClient(string url,string type,string name = "", string senha = "");
+        HttpClient PreparaHttpClient(string url, string type, string name = "", string senha = "");
         string RetonarMenssagemHttp(string url, HttpClient httpClient);
-
     }
 }
